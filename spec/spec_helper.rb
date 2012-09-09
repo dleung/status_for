@@ -10,6 +10,17 @@ ActiveRecord::Base.establish_connection(db_name)
 ActiveRecord::Migration.verbose = false
 load(File.dirname(__FILE__) + "/schema.rb")
 
+RSpec.configure do |config|
+  # Use color in STDOUT
+  config.color_enabled = true
+
+  # Use color not only in STDOUT but also in pagers and files
+  config.tty = true
+
+  # Use the specified formatter
+  config.formatter = :documentation # :progress, :html, :textmate
+end
+
 module App
   class User < ActiveRecord::Base
   end
