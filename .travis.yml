@@ -1,5 +1,4 @@
 rvm:
   - "1.9.3"
 
-before_script:
-  - createdb myapp_test -U postgres
+before_script: createdb myapp_test -U postgres
