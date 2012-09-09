@@ -3,6 +3,5 @@ pg:
   encoding: unicode
   database: myapp_test
   pool: 5
-  username: quosap
-  password: graceling
+  username: postgres
   host: /tmp
