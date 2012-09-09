@@ -7,11 +7,11 @@ require "acts_as_status_for/version"
 Gem::Specification.new do |s|
   s.name        = "acts_as_status_for"
   s.version     = ActsAsStatusFor::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of ActsAsStatusFor."
-  s.description = "TODO: Description of ActsAsStatusFor."
+  s.authors     = ["David Leung"]
+  s.email       = ["davleun@gmail.com"]
+  s.homepage    = ""
+  s.summary     = "Allows tailored status like 'read' or 'deleted' for a class, like a user or message."
+  s.description = "Include this in the module which will allow you to search for status for a class."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]

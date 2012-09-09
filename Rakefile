@@ -21,6 +21,9 @@ RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
+RSpec::Core::RakeTask.new(:spec) 
+
+task :default  => :spec
 
 
 

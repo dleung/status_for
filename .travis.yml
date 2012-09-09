@@ -1,0 +1,7 @@
+gemfile:
+  - Gemfile
+notifications:
+  recipients:
+    - dleung@quosap.com
+  - 1.9.3
+script: "rake"
