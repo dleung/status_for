@@ -18,7 +18,7 @@ gem 'status_for'
 
 #### Step 2: Models
 ``` ruby
-# In your object, 'acts_as_status_for' and include a class you want the subject to be.  
+# In your object, 'initialize_status_for' and include a class you want the subject to be.  
 # model/messages.rb
 initialize_status_for User
 ```
