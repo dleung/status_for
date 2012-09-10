@@ -29,8 +29,8 @@ initialize_status_for User
 # db/migrate/add_status_to_message.rb
 
 create_table :messages, :force => true
-add_column :messages, :deleted_for, "integer[]"
-add_column :messages, :read_for, "integer[]"
+add_column :messages, :deleted_for, "integer[]", default: "{}"
+add_column :messages, :read_for, "integer[]", default: "{}"
 
 # You also need to create the intarray extension if you haven't before.
 execute "CREATE EXTENSION IF NOT EXISTS intarray"
