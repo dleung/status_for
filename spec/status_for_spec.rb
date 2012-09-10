@@ -19,6 +19,7 @@ describe Message do
     message.save
     message.mark_as_deleted_for!(user.id)
     message.mark_as_not_deleted_for!(user.id)
+    message.reload
     Message.not_deleted_for(user).include?(message).should be_true
     Message.deleted_for(user).include?(message).should be_false
     message.check_deleted_for?(user.id).should be_false

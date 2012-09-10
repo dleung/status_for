@@ -59,7 +59,7 @@ module StatusFor
       # query
       def run_find_status_for(method_id, subject)
         unless subject.class.name == self.status_for_subject
-          raise "Acts_as_status_for is not defined for #{subject.class.name}"
+          raise "initialize_status_for is not defined for #{subject.class.name}"
         end
         self.where("idx(#{self.table_name}.#{method_id}_for, #{subject.id})::boolean")
       end
@@ -68,9 +68,9 @@ module StatusFor
       # query
       def run_find_not_status_for(method_id, subject)
         unless subject.class.name == self.status_for_subject
-          raise "Acts_as_status_for is not defined for #{subject.class.name}"
+          raise "initialize_status_for is not defined for #{subject.class.name}"
         end
-        self.where("idx(#{self.table_name}.#{method_id}_for, #{subject.id}) <> 1") 
+        self.where("NOT idx(#{self.table_name}.#{method_id}_for, #{subject.id})::boolean") 
       end
       include Status_For_Utils
       include StatusInstanceMethods
