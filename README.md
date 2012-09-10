@@ -14,6 +14,7 @@ This is an example where you want messages statuses "read" and "deleted" for a u
 # In Gemfile
 gem 'status_for'
 ###
+```
 
 #### Step 2: Models
 ``` ruby
