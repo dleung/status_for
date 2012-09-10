@@ -95,7 +95,7 @@ module StatusFor
   
   module StatusInstanceMethods
     
-    def method_missing(method_id, subject_ids, &block)
+    def method_missing(method_id, *subject_ids, &block)
       # This creates a method for instanced object called 'mark_as_status_for(subject)' that 
       # adds the subject id into relevant database column.
       # Example:  @message.mark_as_deleted_for(user)
@@ -164,10 +164,10 @@ module StatusFor
       if !self.class.column_names.include?(method_id + '_for')
         raise "need to include the #{method_id}_for column in #{self.class.table_name} table"
       end
-      unless subject_id.is_a? Integer
+      unless subject_id.first.is_a? Integer
         raise "subject_id must be an Integer!"
       end
-      return status_for_psql_array_to_array(self.send ((method_id +'_for').to_sym)).include?(subject_id)
+      return status_for_psql_array_to_array(self.send ((method_id +'_for').to_sym)).include?(subject_id.first)
     end
   end
   
