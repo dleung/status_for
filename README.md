@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/dleung/status_for.png)](http://travis-ci.org/dleung/status_for)
+
 # Status For
 
 This module allows you to define a particular status, such as 'deleted', 'unread', 'viewed', etc, to an object, like a message, for a subject like a user.  For example, you can set message.mark_as_read_for(current_user), which marks the message as read, and you can call Message.read_for(current_user) which queries the database to find the messages that has been marked as 'read' for this user.  The query is not instantiated, so you can chain additional methods like .search and .paginate.
