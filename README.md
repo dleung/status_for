@@ -10,14 +10,14 @@ This is an example where you want messages statuses "read" and "deleted" for a u
 #### Step 1: Include the gem
 ``` ruby
 # In Gemfile
-gem 'mark_as_status_for'
+gem 'status_for'
 ###
 
 #### Step 2: Models
 ``` ruby
 # In your object, 'acts_as_status_for' and include a class you want the subject to be.  
 # model/messages.rb
-acts_as_status_for User
+initialize_status_for User
 ```
 
 #### Step 3:  Migration Definition
