@@ -95,7 +95,7 @@ module StatusFor
   
   module StatusInstanceMethods
     
-    def method_missing(method_id, subject_ids)
+    def method_missing(method_id, subject_ids, &block)
       # This creates a method for instanced object called 'mark_as_status_for(subject)' that 
       # adds the subject id into relevant database column.
       # Example:  @message.mark_as_deleted_for(user)
