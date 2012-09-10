@@ -1,16 +1,16 @@
 module StatusFor
   def self.included(base)
-    base.extend ActsAsStatusFor
+    base.extend StatusFor
   end
   
-  module ActsAsStatusFor
+  module StatusFor
     
-    # Include acts_as_status_for in the model class that you want the status_for to exists.
+    # Include initialize_status_for in the model class that you want the status_for to exists.
     # Step 1:
     # Example: Defining a deleted_for in Message model
-    # In message.rb, include "acts_as_status_for (Object)" where subject is the status for 
+    # In message.rb, include "initialize_status_for (Object)" where subject is the status for 
     # in question, like a user.  
-    # Example: acts_as_status_for User
+    # Example: initialize_status_for User
     
     # Step 2:
     # In a migration, include a 'status_for' column in the model of interest.  
@@ -18,7 +18,7 @@ module StatusFor
     # The postgres extension intarray is needed for this, so you may need to add the line
     # execute "CREATE EXTENSION IF NOT EXISTS intarray"
     # in the correct migration  
-    def acts_as_status_for(subject)      
+    def initialize_status_for(subject)      
       cattr_accessor :status_for_subject
       if !subject.is_a? Class
         raise "Subject must be defined as a proper class!"

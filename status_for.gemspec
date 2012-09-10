@@ -1,11 +1,11 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "acts_as_status_for/version"
+require "status_for/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "acts_as_status_for"
+  s.name        = "status_for"
   s.version     = ActsAsStatusFor::VERSION
   s.authors     = ["David Leung"]
   s.email       = ["davleun@gmail.com"]

@@ -1,6 +1,6 @@
 require 'active_support'
 require 'active_record'
-require 'acts_as_status_for'
+require 'status_for'
 
 configs = YAML.load_file(File.dirname(__FILE__) + '/database.yml')
 ActiveRecord::Base.configurations = configs
@@ -25,10 +25,10 @@ module App
   class User < ActiveRecord::Base
   end
   class Message < ActiveRecord::Base
-    acts_as_status_for User
+    initialize_status_for User
   end
   class Email < ActiveRecord::Base
-    acts_as_status_for User
+    initialize_status_for User
   end
 end
 include App
