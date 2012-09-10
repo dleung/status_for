@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    status_for (0.0.2)
+    status_for (0.0.3)
       rails
 
 GEM

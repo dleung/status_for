@@ -27,20 +27,20 @@ module StatusFor
       end      
       
       
-      def method_missing(method_id, subject)
+      def method_missing(method_id, *subject, &block)
         # This creates a method for self called 'status_for(subject)' that finds all the
         # self items with the 'status_for' with the subject id.
         # Example:  Message.deleted_for(user)
         # Returns array of messages which contains user.id in the message's 'deleted_for'
         if method_id.to_s =~ /^([a-z]+)_for$/
-          run_find_status_for($1, subject)
+          run_find_status_for($1, subject.first)
 
         # This creates a method for self called 'not_status_for(subject)' that finds all the
         # self items with the 'status_for' THAT DOES NOT HAVE the subject id.
         # Example:  Message.deleted_for(user)
         # Returns array of messages which DOES NOT contain user.id in the message's 'deleted_for'
         elsif method_id.to_s =~ /^not_([a-z]+)_for$/
-          run_find_not_status_for($1, subject)
+          run_find_not_status_for($1, subject.first)
         else
           super
         end 
