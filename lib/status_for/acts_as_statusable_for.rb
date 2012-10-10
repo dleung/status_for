@@ -170,7 +170,4 @@ module StatusFor
       return status_for_psql_array_to_array(self.send ((method_id +'_for').to_sym)).include?(subject_id.first)
     end
   end
-  
 end
- 
-ActiveRecord::Base.send :include, StatusFor
